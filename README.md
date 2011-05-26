@@ -1,6 +1,6 @@
 # chat-server
 
-A multi-user chat server.
+A multi-user chat server, client module, and sample client CLI.
 
 ## Installation
 
@@ -18,10 +18,21 @@ A multi-user chat server.
 
 ## Client Usage
 
+client-al.js
+
 ````javascript
-var client = require('chat-client').connect();
+var client = require('chat-server').connect();
+client.nick('Al');
 client.join('jokes');
 client.say('jokes', 'what did the hat say to the hat rack?');
+````
+
+client-bob.js
+
+````javascript
+var client = require('chat-server').connect();
+client.nick('Bob');
+client.join('jokes');
 client.on('say', function (channel, who, message) {
   console.log(new Date(), channel, who, message);
 });

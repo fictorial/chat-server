@@ -1,16 +1,22 @@
 {
   "name": "chat-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Everyone has a chat server and this one is mine",
   "keywords": [ "chat", "server", "irc" ],
   "author": "Brian Hammond <brian@fictorial.com> (http://fictorial.com)",
-  "main": "./lib/chat-server.js",
-  "bin": { "chat-server": "./bin/chat-server.js" },
-  "repository": { "type": "git", "url": "https://github.com/fictorial/chat-server.git" },
+  "main": "./lib/chat-client.js",
+  "bin": {
+    "chat-server": "./bin/chat-server.js",
+    "chat-client-cli": "./bin/chat-client-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fictorial/chat-server.git"
+  },
   "dependencies": { 
     "json-line-protocol": "0.x.x",
-    "optimist": "0.x.x", 
-    "log": "1.x.x" 
+    "optimist": "0.x.x",
+    "log": "1.x.x"
   },
   "engines": { "node": ">= 0.4.7" }
 }
