@@ -1,6 +1,6 @@
 {
   "name": "chat-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Everyone has a chat server and this one is mine",
   "keywords": [ "chat", "server", "irc" ],
   "author": "Brian Hammond <brian@fictorial.com> (http://fictorial.com)",

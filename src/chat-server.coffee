@@ -160,8 +160,8 @@ server = net.createServer handle_request
 server.listen argv.port, argv.host, ->
   log.info "ready on #{argv.host}:#{argv.port}"
 
-#handle_error = (error) ->
-#  log.error error.toString()
-#server.on 'error', handle_error
-#process.on 'uncaughtException', handle_error
+if argv['log-level'] isnt 'debug'
+  handle_error = (error) -> log.error error.toString()
+  server.on 'error', handle_error
+  process.on 'uncaughtException', handle_error
 
