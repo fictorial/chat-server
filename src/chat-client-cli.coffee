@@ -12,7 +12,6 @@ fatal_error_handler = (error) ->
 show_error_handler = (error) ->
   console.error 'error:', error.toString()
 
-client.on 'error', show_error_handler
 client.on 'server-error', show_error_handler
 client.on 'protocol-error', fatal_error_handler
 client.on 'client-error', fatal_error_handler

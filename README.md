@@ -9,7 +9,7 @@ A multi-user chat server, client module, and sample client CLI.
 ## Running
 
     chat-server [OPTIONS]
-    
+
     Options:
     -h ip     ip to bind to              default: 127.0.0.1
     -p port   port to bind to            default: 11746
@@ -37,6 +37,69 @@ client.on('say', function (channel, who, message) {
   console.log(new Date(), channel, who, message);
 });
 ````
+
+## Client API
+
+### var client = require('chat-server').connect(port, host)
+
+Connect to a running chat server on host:port.
+
+### client methods
+
+#### nick('nickname')
+
+Set the client's nickname. Must be the first call made.
+
+#### join('channel')
+
+Join a channel.
+
+#### part('channel', 'why')
+
+Leave/part a channel.
+
+#### list(callback)
+
+List all active channels.
+
+#### members('channel', callback)
+
+List all members of a channel. 'callback' is passed an array of
+nicknames.
+
+#### say('channel', 'what')
+
+Say something in a channel. Must already have joined the channel.
+
+### client events
+
+#### 'client-error' (error)
+
+Client I/O error talking to server (e.g. ECONNREFUSED).
+
+#### 'server-error' (message)
+
+Something you tried to do did not go so well (e.g. nickname already in use).
+
+#### 'protocol-error' (error, line)
+
+Shouldn't happen. The server sent a malformed protocol message.
+
+#### 'join' (channel, who)
+
+Someone joined a channel we joined.
+
+#### 'part' (channel, who, why)
+
+Someone parted a channel we joined.
+
+#### 'say' (channel, who, what)
+
+Someone said something in a channel we joined.
+
+#### 'nick' (channel, old_nick, new_nick)
+
+Someone changed their nickname in a channel we joined.
 
 ## Protocol
 
