@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/fictorial/chat-server.png)](http://travis-ci.org/fictorial/chat-server)
 # chat-server ![Project Status](http://stillmaintained.com/fictorial/chat-server.png)
 
 A multi-user chat server, client module, and sample client CLI.
